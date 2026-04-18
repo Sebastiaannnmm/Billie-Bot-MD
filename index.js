@@ -191,14 +191,12 @@ async function startBot() {
                     return;
                 }
 
-                // ── « RPG: ECONOMÍA Y NIVELES (PROGRESIVO) » ──
+                // ── « RPG: ECONOMÍA Y NIVELES » ──
                 if (activos.rpg?.[chatId] && registrados[sender]) {
                     if (!rpgData[chatId]) rpgData[chatId] = {};
                     if (!rpgData[chatId][sender]) rpgData[chatId][sender] = { mg: 0, viaje: 0, rango: fasesRPG[0].rango, inventario: [], lagrimas: 0 };
-                    if (rpgData[chatId][sender].lagrimas === undefined) rpgData[chatId][sender].lagrimas = 0;
-
-                    rpgData[chatId][sender].mg += 1;
                     
+                    rpgData[chatId][sender].mg += 1;
                     let limiteNivel = 10 + (rpgData[chatId][sender].viaje * 15);
 
                     if (rpgData[chatId][sender].mg >= limiteNivel) {
@@ -211,315 +209,64 @@ async function startBot() {
                         if (!rpgData[chatId][sender].inventario) rpgData[chatId][sender].inventario = [];
                         if (nuevaFase.item !== "ninguno") rpgData[chatId][sender].inventario.push(nuevaFase.item);
 
-                        let proximoLimite = 10 + (rpgData[chatId][sender].viaje * 15);
-
-                        const msjNivel = `╭━━━━ ⟡ 𝐧𝐮𝐞𝐯𝐚 𝐩𝐞𝐬𝐚𝐝𝐢𝐥𝐥𝐚 ⟡ ━━━━
-┃
-┃ ✦ 𝐟𝐚𝐧𝐭𝐚𝐬𝐦𝐚 : @${sender.split("@")[0]}
-┃ ✦ 𝐢𝐧𝐬𝐨𝐦𝐧𝐢𝐨 : 𝐧𝐢𝐯𝐞𝐥 ${rpgData[chatId][sender].viaje}
-┃ ✦ 𝐟𝐚𝐬𝐞 : [ ${nuevaFase.rango} ]
-┃
-┃ ⎔ 𝐛𝐨𝐭𝐢𝐧 𝐨𝐛𝐭𝐞𝐧𝐢𝐝𝐨
-┃ ↳ +${nuevaFase.bono} lagrimas negras
-┃ ↳ 1 x ${nuevaFase.item}
-┃
-┃ ⎔ 𝐛𝐚𝐥𝐚𝐧𝐜𝐞 : ${rpgData[chatId][sender].lagrimas} lagrimas
-┃ ✦ 𝐩𝐫𝐨𝐱𝐢𝐦𝐨 𝐧𝐢𝐯𝐞𝐥 : en ${proximoLimite} mensajes
-┃
-┃ ˗ˏˋ you should see me in a crown ˎˊ˗
-╰━━━━━━━━━━━━━━━━━━━━━━━`.toLowerCase();
+                        const msjNivel = `╭━━━━ ⟡ 𝐧𝐮𝐞𝐯𝐚 𝐩𝐞𝐬𝐚𝐝𝐢𝐥𝐥𝐚 ⟡ ━━━━\n┃\n┃ ✦ 𝐟𝐚𝐧𝐭𝐚𝐬𝐦𝐚 : @${sender.split("@")[0]}\n┃ ✦ 𝐢𝐧𝐬𝐨𝐦𝐧𝐢𝐨 : 𝐧𝐢𝐯𝐞𝐥 ${rpgData[chatId][sender].viaje}\n┃ ✦ 𝐟𝐚𝐬𝐞 : [ ${nuevaFase.rango} ]\n┃\n┃ ⎔ 𝐛𝐨𝐭𝐢𝐧 𝐨𝐛𝐭𝐞𝐧𝐢𝐝𝐨\n┃ ↳ +${nuevaFase.bono} lagrimas negras\n┃ ↳ 1 x ${nuevaFase.item}\n┃\n┃ ˗ˏˋ billie-bot- creator ban ˎˊ˗\n╰━━━━━━━━━━━━━━━━━━━━━━━`.toLowerCase();
                         await sock.sendMessage(chatId, { text: msjNivel, mentions: [sender] });
                     }
                     fs.writeFileSync(`${databaseDir}/peep_rpg.json`, JSON.stringify(rpgData, null, 2));
                 }
-
-                // ── « AUTO-CHAT SARCÁSTICO » ──
-                if (activos.autochat?.[chatId] && !lowerText.startsWith(global.prefix)) {
-                    const billieChat = { 
-                        "hola": ["¿vienes a mi fiesta o a mi funeral?", "estoy ocupada ignorando a idiotas.", "no te acerques.", "hola... ¿puedes verme?"], 
-                        "ola": ["el océano está frío... y tú eres un imbécil.", "ola... sin h como tu cerebro vacío.", "¿te perdiste?"], 
-                        "xd": ["¿te ríes de la tragedia?", "mírate, qué patético.", "risa falsa de mierda."], 
-                        "adios": ["lárgate , ya me das asco.", "adiós... no vuelvas.", "una salida dramática."],
-                        "wey": ["no soy tu wey , no somos nada.", "wey... ¿oíste cómo se pudre tu alma?", "deja de llamarme así , estúpido."],
-                        "weon": ["eres un eco insignificante flotando.", "cierra la boca , weón de mierda.", "todos somos el mismo weon flotando."],
-                        "boludo": ["el mundo está lleno de boludos , y tú eres el rey.", "qué aburrimiento das.", "che... bajá un cambio."],
-                        "bro": ["bro... ¿tienes una pala para enterrarte?", "no somos hermanos , no me toques.", "no me digas bro , asqueroso."],
-                        "vaina": ["qué vaina la vida... ojalá se acabe pronto.", "deja esa vaina , das pena.", "solo te va a romper más."],
-                        "zzz": ["duerme... y ojalá no despiertes nunca.", "insomnio... mi único amigo , tú solo estorbas.", "cuando nos dormimos, ¿a dónde vamos?"],
-                        "te amo": ["no lo hagas... te haré sufrir y escribiré una canción sobre tu fracaso.", "soy adorable , ¿verdad? , pero tú eres basura.", "qué asco me das."],
-                        "bot": ["llámame billie , pedazo de mierda.", "¿qué quieres ahora , estúpido?", "soy un error en tu patética vida."],
-                        "que haces": ["mirando cómo pierdes el tiempo.", "esperando que dejes de hablar.", "nada que te interese , chismoso."],
-                        "quien eres": ["soy el chico malo.", "tu peor pesadilla con corona.", "el fantasma que te joderá el sueño."],
-                        "jajaja": ["tu risa me da ganas de vomitar.", "¿de qué te ríes , payaso?", "qué divertido... (ojalá te mueras)."],
-                        "fino": ["elegancia y oscuridad , algo que tú no tienes.", "fino como el cuchillo que te cortará.", "pura estética."],
-                        "pana": ["no soy tu pana , búscate una vida.", "los panas son los primeros en traicionar , idiota.", "no te equivoques conmigo."]
-                    };
-                    
-                    const tiempoCooldown = 10000;
-                    if (!cooldownAutoChat.has(chatId) || (Date.now() - cooldownAutoChat.get(chatId) >= tiempoCooldown)) {
-                        for (let key in billieChat) { 
-                            if (new RegExp('\\b' + key + '\\b', 'i').test(lowerText)) { 
-                                const resList = billieChat[key]; 
-                                cooldownAutoChat.set(chatId, Date.now());
-                                setTimeout(async () => { await sock.sendMessage(chatId, { text: `✦ ${resList[Math.floor(Math.random() * resList.length)].toLowerCase()}` }, { quoted: msg }); }, 1500); 
-                                break; 
-                            } 
-                        }
-                    }
-                }
             }
 
-            // ── « EJECUCIÓN DEL NÚCLEO Y PLUGINS » ──
-            if (lowerText.startsWith(global.prefix) || true) { // Se añade || true para que siempre evalue handlers
+            // ── « PROCESAMIENTO DE COMANDOS » ──
+            if (!lowerText.startsWith(global.prefix)) return;
 
-                // ⟡ ALARMA PARA HANDLER.ALL (AFK Y MONITOREO) ⟡
-                for (let name in plugins) {
-                    let plugin = plugins[name];
-                    if (plugin.all && typeof plugin.all === 'function') {
-                        try {
-                            await plugin.all.call(sock, msg);
-                        } catch (e) {
-                            console.error("error en handler.all:", e);
-                        }
-                    }
+            const command = lowerText.slice(global.prefix.length).trim().split(" ")[0];
+            const rawArgs = messageText.slice(global.prefix.length + command.length).trim();
+            const argsArray = rawArgs.split(/\s+/);
+            const cmdLower = command.toLowerCase();
+
+            const registrados = JSON.parse(fs.readFileSync(`${databaseDir}/peep_usuarios.json`, "utf-8"));
+            if (!registrados[sender] && !['reg', 'registrar'].includes(cmdLower)) {
+                return sock.sendMessage(chatId, { text: `✦ no existes para mí . regístrate primero usando : ${global.prefix}reg nombre.edad` }, { quoted: msg });
+            }
+            
+            const plugin = plugins.find(p => (Array.isArray(p.command) ? p.command : [p.command]).includes(cmdLower));
+            if (plugin) return await plugin(msg, { conn: sock, text: rawArgs, args: argsArray, command: cmdLower, usedPrefix: global.prefix });
+
+            switch (cmdLower) {
+                case 'reg':
+                case 'registrar': {
+                    if (registrados[sender]) return sock.sendMessage(chatId, { text: "✦ ya eres parte de esta pesadilla ." });
+                    const [nombre, edad] = rawArgs.split('.');
+                    if (!nombre || !edad) return sock.sendMessage(chatId, { text: `✦ usa : ${global.prefix}reg nombre.edad` });
+                    registrados[sender] = { nombre, edad: parseInt(edad), fecha: new Date().toLocaleString() };
+                    fs.writeFileSync(`${databaseDir}/peep_usuarios.json`, JSON.stringify(registrados, null, 2));
+                    return sock.sendMessage(chatId, { text: `╭━━━━ ⟡ 𝐛𝐢𝐥𝐥𝐢𝐞 𝐫𝐞𝐠 ⟡ ━━━━\n┃ ✦ 𝐧𝐨𝐦𝐛𝐫𝐞 : ${nombre}\n┃ ✦ 𝐞𝐝𝐚𝐝 : ${edad}\n┃\n┃ ˗ˏˋ billie-bot- creator ban ˎˊ˗\n╰━━━━━━━━━━━━━━━━━━━━━━━`.toLowerCase() });
                 }
 
-                if (!lowerText.startsWith(global.prefix)) return; // Si no es prefijo, no sigue a comandos
-
-                const command = lowerText.slice(global.prefix.length).trim().split(" ")[0];
-                const rawArgs = messageText.slice(global.prefix.length + command.length).trim();
-                const argsArray = rawArgs.split(/\s+/);
-                const cmdLower = command.toLowerCase();
-
-                // FILTRO DE REGISTRO
-                const registrados = fs.existsSync(`${databaseDir}/peep_usuarios.json`) ? JSON.parse(fs.readFileSync(`${databaseDir}/peep_usuarios.json`, "utf-8")) : {};
-                if (!registrados[sender] && cmdLower !== 'reg' && cmdLower !== 'registrar') {
-                    return sock.sendMessage(chatId, { text: `✦ no existes para mí . regístrate primero usando : ${global.prefix}reg nombre.edad\n✦ o piérdete en el vacío .` }, { quoted: msg });
-                }
-                
-                const plugin = plugins.find(p => {
-                    const cmds = Array.isArray(p.command) ? p.command : [p.command];
-                    return cmds.includes(cmdLower);
-                });
-
-                if (plugin) {
-                    try {
-                        return await plugin(msg, { conn: sock, text: rawArgs, args: argsArray, command: cmdLower, usedPrefix: global.prefix });
-                    } catch (e) {
-                        console.error(`Error en plugin ${command}:`, e);
-                        return sock.sendMessage(chatId, { text: "✦ un error más en tu vida ." }, { quoted: msg });
-                    }
+                case 'perfil':
+                case 'me': {
+                    const u = registrados[sender];
+                    const r = (JSON.parse(fs.readFileSync(`${databaseDir}/peep_rpg.json`, "utf-8")))[chatId]?.[sender] || { viaje: 0, rango: "ojos de océano", lagrimas: 0, inventario: [] };
+                    const perfilTexto = `╭━━━━ ⟡ 𝐛𝐢𝐥𝐥𝐢𝐞 𝐜𝐚𝐫𝐝 ⟡ ━━━━\n┃\n┃ ✦ 𝐧𝐨𝐦𝐛𝐫𝐞 : ${u.nombre}\n┃ ✦ 𝐞𝐝𝐚𝐝 : ${u.edad}\n┃ ✦ 𝐢𝐧𝐬𝐨𝐦𝐧𝐢𝐨 : 𝐧𝐢𝐯𝐞𝐥 ${r.viaje}\n┃ ✦ 𝐟𝐚𝐬𝐞 : [ ${r.rango} ]\n┃ ✦ 𝐥𝐚𝐠𝐫𝐢𝐦𝐚𝐬 : ${r.lagrimas}\n┃\n┃ ˗ˏˋ billie-bot- creator ban ˎˊ˗\n╰━━━━━━━━━━━━━━━━━━━━━━━`.toLowerCase();
+                    const randomImg = peepPics[Math.floor(Math.random() * peepPics.length)];
+                    return await sock.sendMessage(chatId, { image: { url: randomImg }, caption: perfilTexto, mentions: [sender] }, { quoted: msg });
                 }
 
-                // COMANDOS NATIVOS
-                switch (cmdLower) {
-                    case 'reg':
-                    case 'registrar': {
-                        if (registrados[sender]) return sock.sendMessage(chatId, { text: "✦ ya eres parte de esta pesadilla ." });
-                        const [nombre, edad] = rawArgs.split('.');
-                        if (!nombre || !edad) return sock.sendMessage(chatId, { text: `✦ usa : ${global.prefix}reg nombre.edad` });
-                        registrados[sender] = { nombre, edad: parseInt(edad), fecha: new Date().toLocaleString() };
-                        fs.writeFileSync(`${databaseDir}/peep_usuarios.json`, JSON.stringify(registrados, null, 2));
-                        const msgReg = `╭━━━━ ⟡ 𝐛𝐢𝐥𝐥𝐢𝐞 𝐫𝐞𝐠 ⟡ ━━━━\n┃ ✦ 𝐧𝐨𝐦𝐛𝐫𝐞 : ${nombre}\n┃ ✦ 𝐞𝐝𝐚𝐝 : ${edad}\n┃\n┃ ˗ˏˋ no me sonrías , perra ˎˊ˗\n╰━━━━━━━━━━━━━━━━━━━━━━━`.toLowerCase();
-                        return sock.sendMessage(chatId, { text: msgReg });
-                    }
-
-                    case 'perfil':
-                    case 'me': {
-                        const rpgData = fs.existsSync(`${databaseDir}/peep_rpg.json`) ? JSON.parse(fs.readFileSync(`${databaseDir}/peep_rpg.json`, "utf-8")) : {};
-                        const u = registrados[sender];
-                        const r = rpgData[chatId]?.[sender] || { mg: 0, viaje: 0, rango: "ojos de océano", inventario: [], lagrimas: 0 };
-                        
-                        const vNum = parseInt(r.viaje) || 0;
-                        const lagrimasNum = parseInt(r.lagrimas) || 0;
-                        const invTexto = r.inventario && r.inventario.length > 0 ? r.inventario.slice(-2).join(" , ") : "nada";
-                        
-                        const perfilTexto = `╭━━━━ ⟡ 𝐛𝐢𝐥𝐥𝐢𝐞 𝐜𝐚𝐫𝐝 ⟡ ━━━━\n┃\n┃ ✦ 𝐧𝐨𝐦𝐛𝐫𝐞 : ${u.nombre}\n┃ ✦ 𝐞𝐝𝐚𝐝 : ${u.edad}\n┃ ✦ 𝐢𝐧𝐬𝐨𝐦𝐧𝐢𝐨 : 𝐧𝐢𝐯𝐞𝐥 ${vNum}\n┃ ✦ 𝐟𝐚𝐬𝐞 : [ ${r.rango} ]\n┃ ✦ 𝐥𝐚𝐠𝐫𝐢𝐦𝐚𝐬 : ${lagrimasNum}\n┃\n┃ ⎔ 𝐮𝐥𝐭𝐢𝐦𝐨𝐬 𝐢𝐭𝐞𝐦𝐬 :\n┃ ↳ ${invTexto}\n┃\n┃ ˗ˏˋ ban ˎˊ˗\n╰━━━━━━━━━━━━━━━━━━━━━━━`.toLowerCase();
-                        const randomImg = peepPics[Math.floor(Math.random() * peepPics.length)];
-                        try {
-                            const res = await axios.get(randomImg, { responseType: 'arraybuffer' });
-                            return await sock.sendMessage(chatId, { image: Buffer.from(res.data), caption: perfilTexto, mentions: [sender] }, { quoted: msg });
-                        } catch (e) {
-                            return await sock.sendMessage(chatId, { text: perfilTexto, mentions: [sender] }, { quoted: msg });
-                        }
-                    }
-
-                    // ── « INTERRUPTORES BLINDADOS » ──
-                    case 'antilink':
-                    case 'antiinsultos':
-                    case 'rpg':
-                    case 'nsfw':
-                    case 'modoadmins':
-                    case 'autochat':
-                    case 'juegos': {
-                        if (!chatId.endsWith("@g.us")) return sock.sendMessage(chatId, { text: "✦ esto solo funciona en grupos , idiota ." }, { quoted: msg });
-                        
-                        const groupMetadata = await sock.groupMetadata(chatId);
-                        const admins = groupMetadata.participants.filter(p => p.admin).map(p => p.id);
-                        const botOwner = isOwner(sender.split("@")[0]);
-                        
-                        if (!admins.includes(sender) && !botOwner) {
-                            return sock.sendMessage(chatId, { text: "✦ no tienes autoridad aquí . solo admins o mi creador ." }, { quoted: msg });
-                        }
-                        
-                        const modo = argsArray[0]?.toLowerCase();
-                        if (!["on", "off"].includes(modo)) {
-                            return sock.sendMessage(chatId, { text: `✦ escribe bien . usa : ${global.prefix}${cmdLower} on/off` }, { quoted: msg });
-                        }
-                        
-                        const activos = fs.existsSync("./activos.json") ? JSON.parse(fs.readFileSync("./activos.json", "utf-8")) : {};
-                        if (!activos[cmdLower]) activos[cmdLower] = {};
-                        
-                        if (modo === 'on') activos[cmdLower][chatId] = true;
-                        else delete activos[cmdLower][chatId];
-                        
-                        fs.writeFileSync("./activos.json", JSON.stringify(activos, null, 2));
-                        return await sock.sendMessage(chatId, { text: `✦ [ ${cmdLower} ] ha sido ${modo === 'on' ? 'activado' : 'desactivado'} . haz tu desastre .` }, { quoted: msg });
-                    }
-
-                    case 'modoprivado': {
-                        const botOwner = isOwner(sender.split("@")[0]);
-                        if (!botOwner) return sock.sendMessage(chatId, { text: "✦ no tienes autoridad . solo mi creador ." }, { quoted: msg });
-                        
-                        const modo = argsArray[0]?.toLowerCase();
-                        if (!["on", "off"].includes(modo)) return sock.sendMessage(chatId, { text: `✦ escribe bien . usa : ${global.prefix}${cmdLower} on/off` }, { quoted: msg });
-                        
-                        const activos = fs.existsSync("./activos.json") ? JSON.parse(fs.readFileSync("./activos.json", "utf-8")) : {};
-                        activos.modoPrivado = (modo === 'on');
-                        fs.writeFileSync("./activos.json", JSON.stringify(activos, null, 2));
-                        return await sock.sendMessage(chatId, { text: `✦ modo privado ${modo === 'on' ? 'activado' : 'desactivado'} . i'm the bad guy .` }, { quoted: msg });
-                    }
-
-                    case 'menuaudio': {
-                        try {
-                            await sock.sendMessage(chatId, { react: { text: "✦", key: msg.key } });
-                            if (!fs.existsSync("./guar.json")) return sock.sendMessage(chatId, { text: "✦ no tienes nada guardado . puro vacío ." }, { quoted: msg });
-                            const guarData = JSON.parse(fs.readFileSync("./guar.json", "utf-8"));
-                            let claves = Object.keys(guarData);
-                            let listaMensaje = `╭━━━━ ⟡ 𝐦𝐮𝐥𝐭𝐢𝐦𝐞𝐝𝐢𝐚 ⟡ ━━━━\n┃\n┃ ✦ 𝐮𝐬𝐚 : ${global.prefix}g <clave>\n┃\n┃ ⎔ 𝐜𝐥𝐚𝐯𝐞𝐬 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐥𝐞𝐬 :\n`;
-                            if (claves.length === 0) { listaMensaje += "┃ ↳ nada guardado . \n"; } else { claves.forEach((clave, index) => { listaMensaje += `┃ ↳ ${index + 1}. ${clave}\n`; }); }
-                            listaMensaje += `┃\n┡━━━━ ⟡ 𝐭𝐨𝐨𝐥𝐬 ⟡ ━━━━\n┃ ✦ ${global.prefix}guar — guardar\n┃ ✦ ${global.prefix}g — recuperar\n┃ ✦ ${global.prefix}kill — borrar\n┃\n╰━━━━━━━━━━━━━━━━━━━━━━━`.toLowerCase();
-                            await sock.sendMessage(chatId, { image: { url: peepPics[0] }, caption: listaMensaje }, { quoted: msg });
-                        } catch (error) { console.error(error); }
-                        break;
-                    }
-
-                    case 'whatmusic': {
-                        const qMusic = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage;
-                        if (!qMusic || (!qMusic.audioMessage && !qMusic.videoMessage)) return sock.sendMessage(chatId, { text: "✦ responde a un audio o video ." });
-                        await sock.sendMessage(chatId, { react: { text: '✦', key: msg.key } });
-                        try {
-                            const type = qMusic.audioMessage ? 'audio' : 'video';
-                            const stream = await downloadContentFromMessage(qMusic[type + 'Message'], type);
-                            let buf = Buffer.alloc(0);
-                            for await (const chunk of stream) buf = Buffer.concat([buf, chunk]);
-                            const inputPath = path.join(__dirname, 'tmp', `${Date.now()}.mp3`);
-                            if(!fs.existsSync(path.join(__dirname, 'tmp'))) fs.mkdirSync(path.join(__dirname, 'tmp'));
-                            fs.writeFileSync(inputPath, buf);
-                            const form = new FormData();
-                            form.append('file', fs.createReadStream(inputPath));
-                            const up = await axios.post('https://cdn.russellxz.click/upload.php', form, { headers: form.getHeaders() });
-                            const res = await axios.get(`https://api.neoxr.eu/api/whatmusic?url=${encodeURIComponent(up.data.url)}&apikey=russellxz`);
-                            const { title, artist } = res.data.data;
-                            await sock.sendMessage(chatId, { text: `╭━━━━ ⟡ 𝐦𝐮𝐬𝐢𝐜 ⟡ ━━━━\n┃ ✦ 𝐭𝐢𝐭𝐮𝐥𝐨 : ${title.toLowerCase()}\n┃ ✦ 𝐚𝐫𝐭𝐢𝐬𝐭𝐚 : ${artist.toLowerCase()}\n╰━━━━━━━━━━━━━━━━━━━━━━━` }, { quoted: msg });
-                            fs.unlinkSync(inputPath);
-                        } catch (err) { console.error(err); }
-                        break;
-                    }
-
-                    case 'tourl': {
-                        const qMsg = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage;
-                        if (!qMsg) return sock.sendMessage(chatId, { text: "✦ responde a un archivo multimedia ." }, { quoted: msg });
-                        await sock.sendMessage(chatId, { react: { text: "✦", key: msg.key } });
-                        try {
-                            let type = qMsg.imageMessage ? 'image' : qMsg.videoMessage ? 'video' : qMsg.stickerMessage ? 'sticker' : qMsg.audioMessage ? 'audio' : null;
-                            if (!type) return;
-                            const stream = await downloadContentFromMessage(qMsg[type + 'Message'] || qMsg, type);
-                            let buf = Buffer.alloc(0);
-                            for await (const chunk of stream) buf = Buffer.concat([buf, chunk]);
-                            const inputPath = path.join(__dirname, 'tmp', `${Date.now()}.${type === 'video' ? 'mp4' : type === 'audio' ? 'mp3' : 'jpg'}`);
-                            if(!fs.existsSync(path.join(__dirname, 'tmp'))) fs.mkdirSync(path.join(__dirname, 'tmp'));
-                            fs.writeFileSync(inputPath, buf);
-                            const form = new FormData();
-                            form.append('file', fs.createReadStream(inputPath));
-                            const res = await axios.post('https://cdn.russellxz.click/upload.php', form, { headers: form.getHeaders() });
-                            await sock.sendMessage(chatId, { text: `✦ enlace : ${res.data.url}` }, { quoted: msg });
-                            fs.unlinkSync(inputPath);
-                        } catch (err) { console.error(err); }
-                        break;
-                    }
-
-                    case 'tovideo': {
-                        const quotedStk = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage?.stickerMessage;
-                        if (!quotedStk) return sock.sendMessage(chatId, { text: "✦ responde a un sticker , inútil ." }, { quoted: msg });
-                        await sock.sendMessage(chatId, { react: { text: "✦", key: msg.key } });
-                        try {
-                            const stream = await downloadContentFromMessage(quotedStk, 'sticker');
-                            let buf = Buffer.alloc(0);
-                            for await (const chunk of stream) buf = Buffer.concat([buf, chunk]);
-                            const inputPath = path.join(__dirname, 'tmp', `${Date.now()}.webp`);
-                            if(!fs.existsSync(path.join(__dirname, 'tmp'))) fs.mkdirSync(path.join(__dirname, 'tmp'));
-                            fs.writeFileSync(inputPath, buf);
-                            const form = new FormData();
-                            form.append("file", fs.createReadStream(inputPath));
-                            const upload = await axios.post("https://cdn.russellxz.click/upload.php", form, { headers: form.getHeaders() });
-                            const conv = await axios.get(`https://api.neoxr.eu/api/webp2mp4?url=${encodeURIComponent(upload.data.url)}&apikey=russellxz`);
-                            await sock.sendMessage(chatId, { video: { url: conv.data.data.url }, caption: '✦ sticker convertido . déjame en paz .' }, { quoted: msg });
-                            fs.unlinkSync(inputPath);
-                        } catch (e) { console.error(e); }
-                        break;
-                    }
-
-                    case 'kick': {
-                        if (!chatId.endsWith("@g.us")) return;
-                        const groupMetadata = await sock.groupMetadata(chatId);
-                        const admins = groupMetadata.participants.filter(p => p.admin).map(p => p.id);
-                        if (!admins.includes(sender) && !isOwner(sender.split("@")[0])) return;
-                        let target = msg.message?.extendedTextMessage?.contextInfo?.participant || msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
-                        if (!target) return sock.sendMessage(chatId, { text: "✦ menciona a alguien para enviarlo al vacío ." });
-                        await sock.groupParticipantsUpdate(chatId, [target], "remove");
-                        await sock.sendMessage(chatId, { text: "✦ bury a friend . estás fuera ." });
-                        break;
-                    }
-
-                    case 'tag': {
-                        if (!chatId.endsWith("@g.us")) return;
-                        const groupMetadata = await sock.groupMetadata(chatId);
-                        const admins = groupMetadata.participants.filter(p => p.admin).map(p => p.id);
-                        if (!admins.includes(sender) && !isOwner(sender.split("@")[0])) return;
-                        const mentions = groupMetadata.participants.map(p => p.id);
-                        const textToTag = rawArgs || "✦ despertando fantasmas...";
-                        await sock.sendMessage(chatId, { text: textToTag.toLowerCase(), mentions }, { quoted: msg });
-                        break;
-                    }
-
-                    case 'carga': {
-                        if (!isOwner(sender.split("@")[0])) return;
-                        exec('git pull', async (error, stdout) => {
-                            if (stdout.includes("Already up to date")) return sock.sendMessage(chatId, { text: "✦ ya está actualizado , no molestes ." });
-                            await sock.sendMessage(chatId, { text: "✦ reiniciando el infierno ..." });
-                            setTimeout(() => process.exit(1), 3000);
-                        });
-                        break;
-                    }
-
-                    case 'menufree': { break; }
-                    case 'sorteo': { break; }
-
-                    default: {
-                        const billieFails = [
-                            "✦ ese comando no existe en mi cabeza . deja de inventar .",
-                            "✦ escribes basura que ni mi sistema reconoce .",
-                            "✦ qué idiota , ese comando ni existe .",
-                            "✦ comando inválido . igual que tú ."
-                        ];
-                        const randomFail = billieFails[Math.floor(Math.random() * billieFails.length)];
-                        await sock.sendMessage(chatId, { text: randomFail }, { quoted: msg });
-                        break;
-                    }
+                case 'antilink':
+                case 'antiinsultos':
+                case 'rpg':
+                case 'autochat': {
+                    if (!isOwner(sender.split("@")[0])) return;
+                    const modo = argsArray[0]?.toLowerCase();
+                    if (!["on", "off"].includes(modo)) return sock.sendMessage(chatId, { text: "✦ usa on/off" });
+                    const activos = JSON.parse(fs.readFileSync("./activos.json", "utf-8"));
+                    if (!activos[cmdLower]) activos[cmdLower] = {};
+                    modo === 'on' ? activos[cmdLower][chatId] = true : delete activos[cmdLower][chatId];
+                    fs.writeFileSync("./activos.json", JSON.stringify(activos, null, 2));
+                    return sock.sendMessage(chatId, { text: `✦ [ ${cmdLower} ] ${modo === 'on' ? 'activado' : 'desactivado'} .` });
                 }
             }
-        } catch (e) { console.error("error en index:", e); }
+        } catch (e) { console.error(e); }
     });
 
     sock.ev.on("connection.update", (u) => { 
