@@ -1,7 +1,7 @@
 const fs = require("fs");
 const chalk = require("chalk");
 
-// 📂 Ruta del archivo de configuración
+// 📂 Ruta del archivo de configuración (Persistencia de prefijo)
 const configFilePath = "./config.json";
 
 // 🔹 Si `config.json` no existe, crearlo con el prefijo por defecto
@@ -12,14 +12,14 @@ if (!fs.existsSync(configFilePath)) {
 // 🔹 Leer configuración desde `config.json`
 const config = JSON.parse(fs.readFileSync(configFilePath, "utf-8"));
 
-// 🔥 IDENTIDAD LIL PEEP (AÑADIDO SIN DAÑAR NADA)
+// 🔥 IDENTIDAD LIL PEEP
 global.botname = "♱ LIL PEEP BOT ♱"; 
 global.peepImg = "https://cdn.russellxz.click/a4d709b4.jpeg";
 
 // 🔥 Prefijo global desde archivo de configuración
 global.prefix = config.prefix || ".";
 
-// Lista de Owners (Mantenemos todos tus números intactos)
+// Lista de Owners (Toda tu lista intacta)
 global.owner = [
     ["15167096032", "Owner", true],
     ["115724051816605"],
@@ -44,10 +44,11 @@ global.owner = [
     ["5216865268215"],
     ["5215639850287"],
     ["15167096032"],
-    ["525639850287"]
+    ["525639850287"],
+    ["573117767495"] // Tu número actual
 ];
 
-// ✅ Lista de prefijos permitidos (Igual que antes)
+// ✅ Lista de prefijos permitidos
 global.allowedPrefixes = [
     ".", "!", "#", "?", "-", "+", "*", "~", "$", "&", "%", "=", "🔥", "💀", "✅", "🥰",
     "💎", "🐱", "🐶", "🌟", "🎃", "🌸", "🪼", "🍑", "🛠️", "📌", "⚡", "🚀", "👀", "💡", "💣", "💯", "😎", "☠️", "👾"
@@ -55,10 +56,11 @@ global.allowedPrefixes = [
 
 global.modoPrivado = false; 
 
-// 🔍 Función para verificar si un usuario es Owner
+// 🔍 Función para verificar si un usuario es Owner (Mejorada para evitar errores)
 global.isOwner = (user) => {
-    user = user.replace(/[^0-9]/g, ""); 
-    return global.owner.some(owner => owner[0] === user);
+    if (!user) return false;
+    const number = user.split('@')[0].replace(/[^0-9]/g, ""); 
+    return global.owner.some(owner => owner[0] === number);
 };
 
 // ⚙️ Función para cambiar el prefijo
@@ -71,14 +73,19 @@ global.setPrefix = (newPrefix) => {
     }
 };
 
-// Mantenemos tus listas de verdad y reto abajo para que los comandos no fallen
-global.verdad = ["¿Alguna vez te ha gustado alguien?...", /* ... resto de tu lista ... */];
-global.reto = ["comer 2 cucharadas de arroz...", /* ... resto de tu lista ... */];
+// Listas de Verdad y Reto
+global.verdad = ["¿Alguna vez te ha gustado alguien?", "¿Qué es lo más loco que has hecho por amor?"];
+global.reto = ["Comer 2 cucharadas de arroz", "Envía una captura de tu historial de búsqueda"];
 
 global.ch = {
     ch1: '120363266665814365@newsletter', 
     ch2: '120363301598733462@newsletter', 
-    // ... resto de tus canales
 };
 
-module.exports = { isOwner: global.isOwner, setPrefix: global.setPrefix, allowedPrefixes: global.allowedPrefixes };
+// Exportamos todo correctamente
+module.exports = { 
+    isOwner: global.isOwner, 
+    setPrefix: global.setPrefix, 
+    allowedPrefixes: global.allowedPrefixes,
+    owner: global.owner
+};
