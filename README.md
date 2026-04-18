@@ -41,17 +41,64 @@
 ---
 
 ## ⟡ ❲ 𝐢𝐧𝐬𝐭𝐚𝐥𝐚𝐜𝐢𝐨𝐧 . 𝐫𝐚𝐩𝐢𝐝𝐚 ❳
+Para los que saben lo que hacen.
 
-Escoge tu plataforma y copia el código de una sola línea:
-
-### 💀 1. 𝐓𝐄𝐑𝐌𝐔𝐗 (Android)
 ```bash
-pkg update -y && pkg upgrade -y && pkg install git nodejs ffmpeg imagemagick -y && git clone [https://github.com/Sebastiaannnmm/Billie-Bot-MD.git](https://github.com/Sebastiaannnmm/Billie-Bot-MD.git) && cd Billie-Bot-MD && npm install && npm start
+git clone [https://github.com/Sebastiaannnmm/Billie-Bot-MD.git](https://github.com/Sebastiaannnmm/Billie-Bot-MD.git)
+cd Billie-Bot-MD
+npm install
+npm start
 ```
 
-### ⚡ 2. 𝐔𝐁𝐔𝐍𝐓𝐔 (VPS / Server)
+---
+
+## 📱 ⟡ ❲ 𝐢𝐧𝐬𝐭𝐚𝐥𝐚𝐜𝐢𝐨𝐧 . 𝐭𝐞𝐫𝐦𝐮𝐱 ❳
+
+### 1. Actualiza paquetes
 ```bash
-sudo apt update && sudo apt upgrade -y && sudo apt install -y git ffmpeg imagemagick nodejs && git clone [https://github.com/Sebastiaannnmm/Billie-Bot-MD.git](https://github.com/Sebastiaannnmm/Billie-Bot-MD.git) && cd Billie-Bot-MD && npm install && npm start
+pkg update -y
+pkg upgrade -y
+```
+
+### 2. Instala dependencias y da permisos
+```bash
+pkg install -y git nodejs ffmpeg
+termux-setup-storage
+```
+
+### 3. Clona el repositorio
+```bash
+git clone [https://github.com/Sebastiaannnmm/Billie-Bot-MD.git](https://github.com/Sebastiaannnmm/Billie-Bot-MD.git)
+cd Billie-Bot-MD
+```
+
+### 4. Instala paquetes de Node e inicia
+```bash
+npm install
+npm start
+```
+
+---
+
+## ⚡ ⟡ ❲ 𝐢𝐧𝐬𝐭𝐚𝐥𝐚𝐜𝐢𝐨𝐧 . 𝐮𝐛𝐮𝐧𝐭𝐮 ❳
+
+### 1. Actualiza el sistema
+```bash
+sudo apt update -y
+sudo apt upgrade -y
+```
+
+### 2. Instala dependencias
+```bash
+sudo apt install -y git ffmpeg imagemagick nodejs
+```
+
+### 3. Clona y enciende
+```bash
+git clone [https://github.com/Sebastiaannnmm/Billie-Bot-MD.git](https://github.com/Sebastiaannnmm/Billie-Bot-MD.git)
+cd Billie-Bot-MD
+npm install
+npm start
 ```
 
 ---
