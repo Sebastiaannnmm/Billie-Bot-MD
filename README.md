@@ -1,8 +1,13 @@
 <div align="center">
-  <video src="https://raw.githubusercontent.com/Sebastiaannnmm/mis-imagenes/43699e9ad80e317fba5b330c5f6d4f159a2fcf42/From%20KlickPin%20CF%20Billie%20Eilish%20Edits%20%F0%9F%92%9A%20_%20Billie%20eilish%20v%C3%ADdeos%20Billie%20Billie%20eilish.mp4" autoplay loop muted playsinline width="100%"></video>
+  
+  <!-- BORRA ESTA LÍNEA DE ABAJO Y ARRASTRA TU ARCHIVO .MP4 AQUÍ PARA QUE GITHUB LO REPRODUZCA -->
+  <img src="https://media.tenor.com/7123VDE2yG4AAAAC/billie-eilish-bad-guy.gif" width="100%" style="border-radius: 15px; border: 2px solid #adff2f;">
+
   <br><br>
   
-  <img src="https://readme-typing-svg.demolab.com?font=Courier+New&weight=600&size=28&duration=4000&pause=1000&color=ADFF2F&center=true&vCenter=true&lines=✦+𝐛𝐢𝐥𝐥𝐢𝐞+.+𝐦𝐝+✦;𝐰𝐡𝐞𝐧+𝐰𝐞+𝐚𝐥𝐥+𝐟𝐚𝐥𝐥+𝐚𝐬𝐥𝐞𝐞𝐩...;𝐰𝐡𝐞𝐫𝐞+𝐝𝐨+𝐰𝐞+𝐠𝐨%3F;𝐢'𝐦+𝐭𝐡𝐞+𝐛𝐚𝐝+𝐠𝐮𝐲+𝐝𝐮𝐡." alt="Typing SVG" />
+  <h1>✦ 𝐛𝐢𝐥𝐥𝐢𝐞 . 𝐦𝐝 ✦</h1>
+  <h3><i>"𝐰𝐡𝐞𝐧 𝐰𝐞 𝐚𝐥𝐥 𝐟𝐚𝐥𝐥 𝐚𝐬𝐥𝐞𝐞𝐩... 𝐰𝐡𝐞𝐫𝐞 𝐝𝐨 𝐰𝐞 𝐠𝐨?"</i></h3>
+  <p><b>𝐢'𝐦 𝐭𝐡𝐞 𝐛𝐚𝐝 𝐠𝐮𝐲, 𝐝𝐮𝐡.</b></p>
 
   <br>
 
@@ -14,51 +19,54 @@
 
 <br>
 
-> ❝ *Todos somos el mismo weón flotando en un abismo de código...* ❞
+> ❝ *Todos somos el mismo weón flotando en un abismo de código. Este bot es la prueba de que el caos puede ser programado.* ❞
 
 <br>
 
 ## ⟡ ❲ 𝐀𝐑𝐒𝐄𝐍𝐀𝐋 . 𝐈𝐍𝐅𝐄𝐑𝐍𝐀𝐋 ❳
 
-Este sistema no está hecho para complacer a nadie. Es una arquitectura basada en eventos diseñada para monitorear, humillar y administrar grupos de WhatsApp con cero tolerancia a los errores.
+Este sistema no está hecho para complacer a nadie. Es una arquitectura basada en eventos diseñada para monitorear, humillar y administrar grupos de WhatsApp con cero tolerancia a los errores. No esperes respuestas amigables, **Billie-Bot** está configurado con una personalidad sarcástica, fría y directa.
 
-| 💀 𝐌𝐎𝐃𝐔𝐋𝐎 | ⚙️ 𝐅𝐔𝐍𝐂𝐈𝐎𝐍𝐀𝐋𝐈𝐃𝐀𝐃 | ⚡ 𝐄𝐒𝐓𝐀𝐃𝐎 |
-| :--- | :--- | :---: |
-| <kbd>AFK Sarcástico</kbd> | Monitoreo global de menciones y conteo de tiempo de ausencia. | 🟢 |
-| <kbd>RPG System</kbd> | Economía basada en lágrimas negras, rangos y límites progresivos. | 🟢 |
-| <kbd>Auto-Chat</kbd> | Respuestas automáticas con frases tóxicas predefinidas. | 🟢 |
-| <kbd>Seguridad</kbd> | Anti-Link, Anti-Insultos y auto-kick blindados para administradores. | 🟢 |
-| <kbd>Multimedia</kbd> | Conversión avanzada (stk > mp4, img > url, downloader integrado). | 🟢 |
+### ✦ Características Principales:
+* **Estética Gótica:** Menús limpios, fuentes oscuras y cero emojis innecesarios. Todo con la vibra de Billie Eilish.
+* **Sistema RPG Complejo:** Economía basada en "lágrimas negras", niveles progresivos y rangos que los usuarios deben ganar sufriendo en el chat.
+* **Blindaje Anti-Idiotas:** Anti-Links, Anti-Spam y baneos automáticos sin previo aviso para quienes rompan las reglas.
+* **Conversión Multimedia:** Crea stickers con metadatos únicos, descarga videos y convierte texto a notas de voz (TTS) con extrema frialdad.
+* **Modo AFK Sarcástico:** Registra tu ausencia, cuenta el tiempo que llevas dormido y destroza verbalmente a quien tenga el atrevimiento de etiquetarte mientras no estás.
 
 ---
 
-## ⟡ ❲ 𝐈𝐍𝐒𝐓𝐀𝐋𝐀𝐂𝐈𝐎𝐍 . 𝐏𝐑𝐎 ❳
+## ⟡ ❲ 𝐈𝐍𝐒𝐓𝐀𝐋𝐀𝐂𝐈𝐎𝐍 ❳
 
-<details>
-<summary><b>✦ Desplegar en Servidor (Click para abrir) ✦</b></summary>
-<br>
+Las instrucciones están a la vista. Elige tu veneno.
 
-No me hagas perder el tiempo. Copia y pega esto en tu terminal de Ubuntu o VPS si tienes el valor de correr el script:
+### 💀 1. Despliegue en TERMUX (Android)
+Copia y pega esto línea por línea en tu celular.
 ```bash
-# 1. Preparar el terreno
-sudo apt update && sudo apt upgrade -y
-sudo apt install -y git ffmpeg imagemagick nodejs
-
-# 2. Clonar el abismo
+pkg update && pkg upgrade -y
+pkg install git nodejs ffmpeg imagemagick -y
 git clone [https://github.com/Sebastiaannnmm/Billie-Bot-MD.git](https://github.com/Sebastiaannnmm/Billie-Bot-MD.git)
 cd Billie-Bot-MD
-
-# 3. Encender la maquinaria
 npm install
 npm start
 ```
-</details>
+
+### ⚡ 2. Despliegue en UBUNTU (VPS / PC)
+Para servidores que corren 24/7 sin detenerse.
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y git ffmpeg imagemagick nodejs
+git clone [https://github.com/Sebastiaannnmm/Billie-Bot-MD.git](https://github.com/Sebastiaannnmm/Billie-Bot-MD.git)
+cd Billie-Bot-MD
+npm install
+npm start
+```
 
 ---
 
 ## ⟡ ❲ 𝐁𝐋𝐎𝐎𝐃𝐋𝐈𝐍𝐄 ❳
 
-El código le pertenece a quien lo domina. No me pidas ayuda si rompes el `index.js`.
+El código le pertenece a quien lo domina. Si rompes el `index.js`, es tu problema.
 
 <div align="center">
 <table>
