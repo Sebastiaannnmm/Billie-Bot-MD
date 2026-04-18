@@ -36,10 +36,9 @@ Este sistema no está hecho para complacer a nadie. Es una arquitectura basada e
 
 <details>
 <summary><b>✦ Desplegar en Servidor (Click para abrir) ✦</b></summary>
-
 <br>
-No me hagas perder el tiempo. Copia y pega esto en tu terminal de Ubuntu o VPS si tienes el valor de correr el script:
 
+No me hagas perder el tiempo. Copia y pega esto en tu terminal de Ubuntu o VPS si tienes el valor de correr el script:
 ```bash
 # 1. Preparar el terreno
 sudo apt update && sudo apt upgrade -y
@@ -52,26 +51,32 @@ cd Billie-Bot-MD
 # 3. Encender la maquinaria
 npm install
 npm start
+```
 </details>
 
-⟡ ❲ 𝐁𝐋𝐎𝐎𝐃𝐋𝐈𝐍𝐄 ❳
-El código le pertenece a quien lo domina. No me pidas ayuda si rompes el index.js.
+---
+
+## ⟡ ❲ 𝐁𝐋𝐎𝐎𝐃𝐋𝐈𝐍𝐄 ❳
+
+El código le pertenece a quien lo domina. No me pidas ayuda si rompes el `index.js`.
 
 <div align="center">
 <table>
 <tr>
 <td align="center">
-<a href="https://www.google.com/search?q=https://instagram.com/b4an_j">
-<img src="https://www.google.com/search?q=https://avatars.githubusercontent.com/Sebastiaannnmm" width="100px;" style="border-radius: 50%; border: 2px solid #adff2f;" alt="Esteban Gutierrez"/>
+<a href="https://instagram.com/b4an_j">
+<img src="https://avatars.githubusercontent.com/Sebastiaannnmm" width="100px;" style="border-radius: 50%; border: 2px solid #adff2f;" alt="Esteban Gutierrez"/>
 </a>
 <br />
 <b>Esteban Gutierrez Perea</b>
 <br />
-<a href="https://www.google.com/search?q=https://wa.me/573117767495"><img src="https://www.google.com/search?q=https://img.shields.io/badge/WhatsApp-Contact-25D366%3Fstyle%3Dflat-square%26logo%3Dwhatsapp%26logoColor%3Dwhite" /></a>
+<a href="https://wa.me/573117767495"><img src="https://img.shields.io/badge/WhatsApp-Contact-25D366?style=flat-square&logo=whatsapp&logoColor=white" /></a>
 </td>
 </tr>
 </table>
 </div>
+
+<br>
 
 <div align="center">
 <i>"𝐬𝐞𝐞 𝐲𝐨𝐮 𝐢𝐧 𝐭𝐡𝐞 𝐝𝐚𝐫𝐤..."</i>
