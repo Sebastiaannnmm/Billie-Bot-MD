@@ -1,7 +1,7 @@
 {
   "name": "billie-bot-md",
   "version": "1.0.0",
-  "description": "Bot de WhatsApp - Estilo Billie Eilish",
+  "description": "Bot de WhatsApp - Estilo Billie Eilish y Lil Peep",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
@@ -36,7 +36,6 @@
     "node-webpmux": "^3.1.7",
     "pino": "^8.14.1",
     "qrcode-terminal": "^0.12.0",
-    "sharp": "^0.32.6",
     "yt-search": "^2.10.3"
   },
   "devDependencies": {
