@@ -1,7 +1,6 @@
 <div align="center">
-  
-  <!-- BORRA ESTA LÍNEA DE ABAJO Y ARRASTRA TU ARCHIVO .MP4 AQUÍ PARA QUE GITHUB LO REPRODUZCA -->
-  <img src="https://media.tenor.com/7123VDE2yG4AAAAC/billie-eilish-bad-guy.gif" width="100%" style="border-radius: 15px; border: 2px solid #adff2f;">
+  <video src="https://github.com/user-attachments/assets/87a741ce-2b81-4d7b-8c89-d4230c687893" autoplay loop muted playsinline width="100%" style="border-radius: 15px; border: 2px solid #adff2f;"></video>
+ 
 
   <br><br>
   
