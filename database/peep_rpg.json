@@ -1,0 +1,282 @@
+{
+  "120363422513743392@g.us": {
+    "1138870984934@lid": {
+      "mg": 131,
+      "nivel": 1,
+      "rango": "limpio"
+    },
+    "4097918947409@lid": {
+      "nombre": "Lensita",
+      "mg": 7,
+      "viaje": 1,
+      "rango": "sobrio y triste"
+    }
+  },
+  "120363409168888477@g.us": {
+    "214843005136933@lid": {
+      "mg": 3,
+      "nivel": 1,
+      "rango": "dios del vacío",
+      "lagrimas": 100000,
+      "viaje": null,
+      "inventario": [
+        "el control total"
+      ]
+    },
+    "1138870984934@lid": {
+      "mg": 0,
+      "nivel": 1,
+      "rango": "dolor de estómago",
+      "lagrimas": 105365,
+      "viaje": 2,
+      "inventario": [
+        "el control total",
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado"
+      ],
+      "cooldowns": {
+        "work": 1776107075018,
+        "adventure": 1776107104985
+      }
+    }
+  },
+  "120363404959252236@g.us": {
+    "1138870984934@lid": {
+      "mg": 123,
+      "viaje": 13,
+      "rango": "oxitocina venenosa",
+      "lagrimas": 44074,
+      "inventario": [
+        "1 cuchillo oxidado",
+        "3 arañas viuda negra",
+        "1 boleto al abismo",
+        "1 pala con sangre",
+        "5 pastillas blancas",
+        "1 mapa sin salida",
+        "1 reloj roto",
+        "1 espejo roto",
+        "1 contrato maldito",
+        "1 corona de oro fundido",
+        "1 sonrisa falsa",
+        "2 jeringas usadas"
+      ],
+      "cooldowns": {
+        "work": 1776449682885,
+        "mine": 1776108168726,
+        "rob": 1776109754816
+      }
+    },
+    "68294878982348@lid": {
+      "mg": 65,
+      "viaje": 8,
+      "rango": "no hay tiempo para morir",
+      "lagrimas": 22839,
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado",
+        "3 arañas viuda negra",
+        "1 boleto al abismo",
+        "1 pala con sangre",
+        "5 pastillas blancas",
+        "1 mapa sin salida",
+        "1 reloj roto"
+      ],
+      "cooldowns": {
+        "rob": 1776443891422,
+        "work": 1776443905946,
+        "daily": 1776144630372,
+        "mine": 1776443862897,
+        "adventure": 1776450103524
+      }
+    },
+    "194910279995534@lid": {
+      "mg": 23,
+      "viaje": 1,
+      "rango": "imitador barato",
+      "inventario": [
+        "2 pastillas oscuras"
+      ],
+      "lagrimas": 50
+    },
+    "137752989433884@lid": {
+      "mg": 69,
+      "viaje": 7,
+      "rango": "ilomilo perdido",
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado",
+        "3 arañas viuda negra",
+        "1 boleto al abismo",
+        "1 pala con sangre",
+        "5 pastillas blancas",
+        "1 mapa sin salida"
+      ],
+      "lagrimas": 4800
+    },
+    "135304958750726@lid": {
+      "mg": 6,
+      "viaje": 1,
+      "rango": "imitador barato",
+      "inventario": [
+        "2 pastillas oscuras"
+      ],
+      "lagrimas": 50
+    },
+    "202409628409867@lid": {
+      "mg": 82,
+      "viaje": 7,
+      "rango": "ilomilo perdido",
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado",
+        "3 arañas viuda negra",
+        "1 boleto al abismo",
+        "1 pala con sangre",
+        "5 pastillas blancas",
+        "1 mapa sin salida"
+      ],
+      "lagrimas": 4800
+    },
+    "4097918947409@lid": {
+      "mg": 84,
+      "viaje": 8,
+      "rango": "no hay tiempo para morir",
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado",
+        "3 arañas viuda negra",
+        "1 boleto al abismo",
+        "1 pala con sangre",
+        "5 pastillas blancas",
+        "1 mapa sin salida",
+        "1 reloj roto"
+      ],
+      "lagrimas": 7100,
+      "cooldowns": {
+        "rob": 1776116194663
+      }
+    },
+    "68368044441839@lid": {
+      "mg": 10,
+      "viaje": 1,
+      "rango": "imitador barato",
+      "inventario": [
+        "2 pastillas oscuras"
+      ],
+      "lagrimas": 2127,
+      "cooldowns": {
+        "rob": 1776116412211
+      }
+    },
+    "163505781141510@lid": {
+      "mg": 4,
+      "viaje": 0,
+      "rango": "ojos de océano",
+      "inventario": [],
+      "lagrimas": 0
+    },
+    "135617937715411@lid": {
+      "mg": 21,
+      "viaje": 3,
+      "rango": "corona de espinas",
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado",
+        "3 arañas viuda negra"
+      ],
+      "lagrimas": 500
+    },
+    "183962710351941@lid": {
+      "mg": 6,
+      "viaje": 0,
+      "rango": "ojos de océano",
+      "inventario": [],
+      "lagrimas": 0
+    },
+    "228673118539926@lid": {
+      "mg": 10,
+      "viaje": 2,
+      "rango": "dolor de estómago",
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado"
+      ],
+      "lagrimas": 200
+    },
+    "97268694831205@lid": {
+      "mg": 5,
+      "viaje": 3,
+      "rango": "corona de espinas",
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado",
+        "3 arañas viuda negra"
+      ],
+      "lagrimas": 500
+    },
+    "197543195623435@lid": {
+      "mg": 31,
+      "viaje": 2,
+      "rango": "dolor de estómago",
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado"
+      ],
+      "lagrimas": 200
+    },
+    "57811065131204@lid": {
+      "mg": 33,
+      "viaje": 3,
+      "rango": "corona de espinas",
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado",
+        "3 arañas viuda negra"
+      ],
+      "lagrimas": 500
+    },
+    "86991039397938@lid": {
+      "mg": 8,
+      "viaje": 0,
+      "rango": "ojos de océano",
+      "inventario": [],
+      "lagrimas": 0
+    },
+    "84697493303530@lid": {
+      "mg": 0,
+      "viaje": 1,
+      "rango": "imitador barato",
+      "inventario": [
+        "2 pastillas oscuras"
+      ],
+      "lagrimas": 50
+    },
+    "113306102706297@lid": {
+      "mg": 12,
+      "viaje": 5,
+      "rango": "enterrador de amigos",
+      "inventario": [
+        "2 pastillas oscuras",
+        "1 cuchillo oxidado",
+        "3 arañas viuda negra",
+        "1 boleto al abismo",
+        "1 pala con sangre"
+      ],
+      "lagrimas": 4759,
+      "cooldowns": {
+        "daily": 1776449565463,
+        "work": 1776449735928,
+        "mine": 1776450054286
+      }
+    },
+    "120100891979811@lid": {
+      "mg": 5,
+      "viaje": 1,
+      "rango": "imitador barato",
+      "inventario": [
+        "2 pastillas oscuras"
+      ],
+      "lagrimas": 50
+    }
+  }
+}
