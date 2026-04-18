@@ -6,11 +6,10 @@
   <p align="center">
     <img src="https://img.shields.io/badge/AUTH-BAN-black?style=for-the-badge&logo=github&logoColor=adff2f" />
     <img src="https://img.shields.io/badge/STATUS-OPERATIONAL-adff2f?style=for-the-badge&logo=statuspage&logoColor=black" />
-    <img src="https://img.shields.io/badge/VERSION-3.1.0-blue?style=for-the-badge" />
   </p>
 
   <h1>✦ 𝐛𝐢𝐥𝐥𝐢𝐞 . 𝐦𝐝 ✦</h1>
-  <p><i>"𝐢'𝐦 𝐭𝐡𝐞+𝐛𝐚𝐝+𝐠𝐮𝐲, 𝐝𝐮𝐡."</i></p>
+  <p><i>"𝐢'𝐦 𝐭𝐡𝐞 𝐛𝐚𝐝 𝐠𝐮𝐲, 𝐝𝐮𝐡."</i></p>
 
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
   <img src="https://img.shields.io/badge/Baileys-FFD700?style=flat-square&logo=whatsapp&logoColor=black" />
@@ -27,33 +26,30 @@
 ---
 
 ### ⟡ ❲ 𝐢𝐧𝐟𝐨 . 𝐬𝐲𝐬𝐭𝐞𝐦 ❳
-> ❝ *No es solo un bot, es una extensión del vacío. Diseñado para quienes no temen al sarcasmo ni a la eficiencia absoluta.* ❞
-
-Este sistema está blindado contra el spam y optimizado para una respuesta gélida. Olvida los bots coloridos y amigables; **Billie.md** es minimalismo, oscuridad y potencia pura.
+> ❝ *Este sistema no está hecho para complacer a nadie. Es una arquitectura diseñada para monitorear y administrar con cero tolerancia a los errores.* ❞
 
 ---
 
 ### ⟡ ❲ 𝐚𝐫𝐬𝐞𝐧𝐚𝐥 . 𝐦𝐞𝐧𝐮 ❳
 | ⎔ 𝐦𝐨𝐝𝐮𝐥𝐨 | 𝐝𝐞𝐬𝐜𝐫𝐢𝐩𝐜𝐢𝐨𝐧 | 𝐞𝐬𝐭𝐚𝐝𝐨 |
 | :--- | :--- | :---: |
-| 🗃️ **𝐀𝐝𝐦𝐢𝐧** | Gestión total de grupos y blindaje anti-links. | `ACTIVE` |
-| 🎭 **𝐒𝐭𝐢𝐜𝐤𝐞𝐫𝐬** | Conversión multimedia con metadatos de autor. | `READY` |
-| 🩸 **𝐑𝐏𝐆** | Economía de lágrimas negras y niveles de infierno. | `ONLINE` |
-| 🎙️ **𝐕𝐨𝐢𝐜𝐞** | TTS con una frialdad robótica insuperable. | `STABLE` |
-| 🌙 **𝐀𝐅𝐊** | Monitoreo de sueño y humillación de intrusos. | `ARMED` |
+| 🗃️ **𝐀𝐝𝐦𝐢𝐧** | Gestión de grupos y blindaje anti-links. | `ACTIVE` |
+| 🎭 **𝐒𝐭𝐢𝐜𝐤𝐞𝐫𝐬** | Conversión multimedia con metadatos. | `READY` |
+| 🩸 **𝐑𝐏𝐆** | Economía de lágrimas negras y niveles. | `ONLINE` |
+| 🎙️ **𝐕𝐨𝐢𝐜𝐞** | TTS con frialdad robótica insuperable. | `STABLE` |
 
 ---
 
-### ⟡ ❲ 𝐢𝐧𝐬𝐭𝐚𝐥𝐚𝐜𝐢𝐨𝐧 . 𝐟𝐚𝐬𝐭 ❳
+## ⟡ ❲ 𝐢𝐧𝐬𝐭𝐚𝐥𝐚𝐜𝐢𝐨𝐧 . 𝐫𝐚𝐩𝐢𝐝𝐚 ❳
 
-#### 💀 𝐓𝐄𝐑𝐌𝐔𝐗 (One-Line Install)
-Copia y pega este comando único para instalar todo de golpe:
+Escoge tu plataforma y copia el código de una sola línea:
+
+### 💀 1. 𝐓𝐄𝐑𝐌𝐔𝐗 (Android)
 ```bash
 pkg update -y && pkg upgrade -y && pkg install git nodejs ffmpeg imagemagick -y && git clone [https://github.com/Sebastiaannnmm/Billie-Bot-MD.git](https://github.com/Sebastiaannnmm/Billie-Bot-MD.git) && cd Billie-Bot-MD && npm install && npm start
 ```
 
-#### ⚡ 𝐔𝐁𝐔𝐍𝐓𝐔 (VPS / Server)
-Despliegue rápido para servidores 24/7:
+### ⚡ 2. 𝐔𝐁𝐔𝐍𝐓𝐔 (VPS / Server)
 ```bash
 sudo apt update && sudo apt upgrade -y && sudo apt install -y git ffmpeg imagemagick nodejs && git clone [https://github.com/Sebastiaannnmm/Billie-Bot-MD.git](https://github.com/Sebastiaannnmm/Billie-Bot-MD.git) && cd Billie-Bot-MD && npm install && npm start
 ```
