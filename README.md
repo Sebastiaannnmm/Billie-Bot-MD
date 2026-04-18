@@ -1,5 +1,5 @@
 <div align="center">
-  <video src="https://raw.githubusercontent.com/Sebastiaannnmm/mis-imagenes/43699e9ad80e317fba5b330c5f6d4f159a2fcf42/From%20KlickPin%20CF%20Billie%20Eilish%20Edits%20%F0%9F%92%9A%20_%20Billie%20eilish%20v%C3%ADdeos%20Billie%20Billie%20eilish.mp4" autoplay loop muted width="100%" style="border-radius: 15px; border: 2px solid #adff2f;"></video>
+  <video src="https://raw.githubusercontent.com/Sebastiaannnmm/mis-imagenes/43699e9ad80e317fba5b330c5f6d4f159a2fcf42/From%20KlickPin%20CF%20Billie%20Eilish%20Edits%20%F0%9F%92%9A%20_%20Billie%20eilish%20v%C3%ADdeos%20Billie%20Billie%20eilish.mp4" autoplay loop muted playsinline width="100%"></video>
   <br><br>
   
   <img src="https://readme-typing-svg.demolab.com?font=Courier+New&weight=600&size=28&duration=4000&pause=1000&color=ADFF2F&center=true&vCenter=true&lines=✦+𝐛𝐢𝐥𝐥𝐢𝐞+.+𝐦𝐝+✦;𝐰𝐡𝐞𝐧+𝐰𝐞+𝐚𝐥𝐥+𝐟𝐚𝐥𝐥+𝐚𝐬𝐥𝐞𝐞𝐩...;𝐰𝐡𝐞𝐫𝐞+𝐝𝐨+𝐰𝐞+𝐠𝐨%3F;𝐢'𝐦+𝐭𝐡𝐞+𝐛𝐚𝐝+𝐠𝐮𝐲+𝐝𝐮𝐡." alt="Typing SVG" />
@@ -65,10 +65,10 @@ El código le pertenece a quien lo domina. No me pidas ayuda si rompes el `index
 <tr>
 <td align="center">
 <a href="https://instagram.com/b4an_j">
-<img src="https://avatars.githubusercontent.com/Sebastiaannnmm" width="100px;" style="border-radius: 50%; border: 2px solid #adff2f;" alt="Esteban Gutierrez"/>
+<img src="https://avatars.githubusercontent.com/Sebastiaannnmm" width="100px;" style="border-radius: 50%; border: 2px solid #adff2f;" alt="ban"/>
 </a>
 <br />
-<b>Esteban Gutierrez Perea</b>
+<b>ban</b>
 <br />
 <a href="https://wa.me/573117767495"><img src="https://img.shields.io/badge/WhatsApp-Contact-25D366?style=flat-square&logo=whatsapp&logoColor=white" /></a>
 </td>
